@@ -64,6 +64,24 @@
                             "extractLicenses": false,
                             "sourceMap": true,
                             "namedChunks": true
+                        },
+                        "local": {
+                            "buildOptimizer": false,
+                            "optimization": false,
+                            "vendorChunk": true,
+                            "extractLicenses": false,
+                            "namedChunks": true,
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.local.ts"
+                                }
+                            ],
+                            "sourceMap": {
+                                "scripts": true,
+                                "styles": true,
+                                "vendor": false
+                            }
                         }
                     },
                     "defaultConfiguration": "production"
@@ -76,6 +94,9 @@
                         },
                         "development": {
                             "browserTarget": "platformer:build:development"
+                        },
+                        "local": {
+                            "browserTarget": "platformer:build:local"
                         }
                     },
                     "defaultConfiguration": "development"
