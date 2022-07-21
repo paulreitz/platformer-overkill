@@ -3,6 +3,8 @@
 ## What is This?
 This is intended as a more extended version of the project built in this tutorial: https://stackabuse.com/phaser-3-and-tiled-building-a-platformer/
 
+If you're just learning Phaser, I would recommend going through the original tutorial before continueing with this.
+
 ## But Why?
 Most tutorials are deliberately simple. This is so one or two concepts can be explained without a bunch of unrelated information getting in the way.
 
