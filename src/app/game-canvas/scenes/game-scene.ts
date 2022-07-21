@@ -38,5 +38,17 @@ export class GameScene extends Phaser.Scene {
         this.player.setSpikeCollision(this.spikes);
     }
 
-    update(): void {}
+    update(): void {
+        if (this.cursors.left.isDown) {
+            this.player.left();
+        } else if (this.cursors.right.isDown) {
+            this.player.right();
+        } else {
+            this.player.stop();
+        }
+
+        if (this.cursors.space.isDown || this.cursors.up.isDown) {
+            this.player.jump();
+        }
+    }
 }
