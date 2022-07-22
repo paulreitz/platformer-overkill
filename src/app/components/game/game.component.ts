@@ -1,6 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { MainGame } from '../../game-canvas/main-game';
+import { GameService } from '../../shared/services/game.service';
 
 @Component({
     selector: 'app-game',
@@ -10,7 +11,7 @@ import { MainGame } from '../../game-canvas/main-game';
 export class GameComponent implements AfterViewInit {
     canvasId: string = 'game-canvas';
     game: MainGame;
-    constructor() {}
+    constructor(private gameService: GameService) {}
     ngAfterViewInit(): void {
         const gameConfig: Phaser.Types.Core.GameConfig = {
             type: Phaser.AUTO,
@@ -29,6 +30,6 @@ export class GameComponent implements AfterViewInit {
                 },
             },
         };
-        this.game = new MainGame(gameConfig);
+        this.game = new MainGame(gameConfig, this.gameService);
     }
 }
